@@ -1,0 +1,42 @@
+{
+  "logo": {
+    "text": "Webster Documentation",
+    "type": "link",
+    "path": "index.html"
+  },
+  "main": [
+    {
+      "text": "Tutorial",
+      "type": "link",
+      "path": "index.html"
+    },
+    {
+      "text": "API",
+      "type": "label"
+    },
+    {
+      "text": "Consumer",
+      "type": "link",
+      "path": "api/consumer.html"
+    },
+    {
+      "text": "Producer",
+      "type": "link",
+      "path": "api/producer.html"
+    },
+    {
+      "text": "Task",
+      "type": "link",
+      "path": "api/task.html"
+    },
+    {
+      "text": "SUPPORT AND FEEDBACK",
+      "type": "label"
+    },
+    {
+      "text": "Raise an Issue on Github",
+      "type": "link",
+      "path": "https://github.com/zhuyingda/webster/issues/new"
+    }
+  ]
+}
