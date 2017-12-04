@@ -45,7 +45,7 @@ let myConsumer = new MyConsumer({
     dbConf: {
         redis: {
             host: '<your redis host>',
-            port: 8888,
+            port: 6379,
             password: '<your redis password>'
         }
     }
@@ -86,3 +86,6 @@ This is a hook method, which will be invoked after your spider crawling the page
 ## whenTaskFailed
 
 This is a hook method, which will be invoked when your `beforeParseHtml` return false. You can record the error crawling or directly new a `producer` to send this task back to the task queue.
+
+## changeOption
+This method is inherited from `Consumer` class which can change the `sleepTime` and `userAgent` options which you have set when the consumer instance setup.

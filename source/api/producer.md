@@ -13,7 +13,7 @@ let myProducer = new Producer({
     dbConf: {
         redis: {
             host: '<your redis host>',
-            port: 8888,
+            port: 6379,
             password: '<your redis password>'
         }
     }
@@ -32,6 +32,9 @@ This is a required param. Every `producer` must set a channel, channel is a uniq
 Now webster is only support redis database to build up task queue. What you should do is only to provide a redis server for webster, and then the task queue will be founded and maintained by webster.
 
 Notice that you should set a password for your redis.
+
+## generateTask
+This is a method which returns a promise object after one single task has been sended to task queue. You should pass a task object to this method.
 
 ## sendTasksToQueue
 This is a method which returns a promise object after all tasks have been sended to task queue. You should pass a task array to this method.

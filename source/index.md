@@ -8,6 +8,23 @@ You can use it to quickly bootstrap your documentation website.
 
 ## Getting Started
 
+### Docker quick Start
+pull the example docker image:
+```bash
+docker pull zhuyingda/webster-demo
+
+docker run -it zhuyingda/webster-demo
+```
+
+in the docker runtime cli:
+```bash
+cd /root/webster_runtime/
+
+node demo_producer.js
+
+node demo_consumer.js
+```
+
 ### Requirements
 - Node.js 8.x+, redis
 - Works on Linux, Mac OSX
@@ -57,12 +74,12 @@ let myProducer = new Producer({
     dbConf: {
         redis: {
             host: '<your redis host>',
-            port: 8888,
+            port: 6379,
             password: '<your redis password>'
         }
     }
 });
-myProducer.sendTasksToQueue(tasks).then(() => {
+myProducer.generateTask(task).then(() => {
     console.log('done');
 });
 ```
@@ -94,7 +111,7 @@ let myConsumer = new MyConsumer({
     dbConf: {
         redis: {
             host: '<your redis host>',
-            port: 8888,
+            port: 6379,
             password: '<your redis password>'
         }
     }
