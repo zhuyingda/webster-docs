@@ -39,9 +39,8 @@ Producer side:
 const Webster = require('webster');
 const Producer = Webster.producer;
 const Task = Webster.task;
-let tasks = [];
 
-tasks.push(new Task({
+new Task({
     spiderType: 'browser',
     url: 'https://www.baidu.com/s?wd=javascript',
     targets: [
@@ -49,32 +48,9 @@ tasks.push(new Task({
             selector: '.result.c-container h3',
             type: 'text',
             field: 'title'
-        },
-        {
-            selector: '.result.c-container h3 a',
-            type: 'attr',
-            attrName: 'href',
-            field: 'link'
-        },
-        {
-            selector: '.result.c-container .c-abstract',
-            type: 'html',
-            field: 'htmlfrag'
         }
     ]
-}));
-
-tasks.push(new Task({
-    spiderType: 'plain',
-    url: 'https://www.baidu.com/s?wd=javascript',
-    targets: [
-        {
-            selector: '.result.c-container h3',
-            type: 'text',
-            field: 'title'
-        }
-    ]
-}));
+});
 
 let myProducer = new Producer({
     channel: 'baidu',
@@ -89,7 +65,7 @@ let myProducer = new Producer({
 myProducer.sendTasksToQueue(tasks).then(() => {
     console.log('done');
 });
-````
+```
 
 This is a producer demo, as you can see, create some tasks by **Task** class just like this, then create a **Producer** instance and invoke `sendTasksToQueue` method to send your tasks to your queue.
 
@@ -108,18 +84,6 @@ class MyConsumer extends Consumer {
     }
     afterCrawlRequest(result) {
         console.log('your scrape result:', result);
-    }
-    whenTaskFailed(task, reason) {
-        console.log('your task has failed:', task, ', because of:', reason);
-    }
-    async beforeParseHtml(html) {
-        console.log(/<\/html>/.test(html));
-        if (/<\/html>/.test(html)) {
-            return true;
-        }
-        else {
-            return false;
-        }
     }
 }
 
