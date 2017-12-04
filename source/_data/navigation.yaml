@@ -30,13 +30,23 @@
       "path": "api/task.html"
     },
     {
-      "text": "SUPPORT AND FEEDBACK",
+      "text": "More Info",
       "type": "label"
     },
     {
-      "text": "Raise an Issue on Github",
+      "text": "Github",
       "type": "link",
-      "path": "https://github.com/zhuyingda/webster/issues/new"
+      "path": "https://github.com/zhuyingda/webster"
+    },
+    {
+      "text": "About Author",
+      "type": "link",
+      "path": "https://www.weibo.com/u/5114485810"
+    },
+    {
+      "text": "Blog",
+      "type": "link",
+      "path": "https://www.zhuyingda.com/blog.html"
     }
   ]
 }
