@@ -50,7 +50,7 @@ let myConsumer = new MyConsumer({
         }
     }
 });
-myConsumer.setup();
+myConsumer.startConsume();
 ```
 
 ## channel
