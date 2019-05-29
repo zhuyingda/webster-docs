@@ -116,7 +116,7 @@ let myConsumer = new MyConsumer({
         }
     }
 });
-myConsumer.setup();
+myConsumer.startConsume();
 ```
 
 This is a consumer demo. You must build a subclass inherit the **Consumer** parent class.
