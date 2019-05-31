@@ -62,12 +62,6 @@ This is a required param. Every `consumer` must set a channel, channel is a uniq
 
 This is not a required param. The default value is 5000(ms), which means the consumer inst will poll the task queue service (actually redis server) one time by 5 seconds. Too frequently polling may cause your task queue overload.
 
-## delayTime
-
-This param rely on Webster version >= 1.5.x
-
-This is not a required param, and this param is valid when spiderType is 'browser'. The default value is 0(ms), which means the consumer inst will not wait for any time after the browser page loaded. If you set it 1000(ms), the browser will wait for 1 second after the page loaded and before the crawling action.
-
 ## deviceType
 This is not a required param.
 
